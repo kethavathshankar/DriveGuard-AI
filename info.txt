@@ -1,0 +1,34 @@
+#create venv
+cd path/to/cvit_driver_monitor
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+python -m pip install --upgrade pip
+
+#To run 
+python -m streamlit run src/dashboard_app.py --server.fileWatcherType none
+
+# To run file
+streamlit run src/dashboard_app.py
+
+python -m streamlit run src/dashboard_app.py --server.fileWatcherType none
+
+# to run files
+python -m src.indicator_detector
+
+#To run file 
+python src/compare_tracks_metrics.py
+
+# To fond class of data streamlit
+python - <<EOF
+from ultralytics import YOLO
+model = YOLO("yolo11x.pt")
+print(model.names)
+EOF
+
+# Delet output files
+rm -f outputs/speed_sign_raw_detections.csv
+rm -f outputs/speed_sign_events.csv
+rm -f outputs/speed_sign_debug.mp4
+rm -f outputs/dashboard_annotated.mp4

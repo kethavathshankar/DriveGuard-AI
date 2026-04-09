@@ -1,0 +1,13 @@
+# Training yolo for speed detection
+yolo detect train \
+data=data/speed_sign_dataset/data.yaml \
+model=yolo11s.pt \
+imgsz=960 \
+epochs=20 \
+batch=8 \
+device=mps \
+project=runs/speed_sign \
+name=yolo11s_speed_sign_e50
+
+#After running for all 3 kids of epoch 
+python src/plot_epoch_comparison.py
