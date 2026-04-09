@@ -1930,6 +1930,6 @@ elif st.session_state.dashboard_has_results:
                 mime="text/csv",
                 key="saved_report_download"
             )
-
+###
 else:
     st.info("Set inputs and click **Run Dashboard Processing**.")
